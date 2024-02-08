@@ -2,6 +2,7 @@ package com.breeze.springapi.data.dto;
 
 import lombok.*;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString

@@ -14,14 +14,14 @@ public class ShortUrlEntity extends BaseEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ID;
+    private Long id;
 
     @Column(nullable = false, unique = true)
-    private String HASH;
+    private String hash;
 
     @Column(nullable = false, unique = true)
-    private String URL;
+    private String url;
 
     @Column(nullable = false, unique = true)
-    private String ORGURL;
+    private String orgUrl;
 }

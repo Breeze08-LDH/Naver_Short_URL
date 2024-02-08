@@ -29,15 +29,14 @@ public class ShortUrlController {
         this.shortUrlService = shortUrlService;
     }
 
-    @PostMapping
+    @PostMapping("/")
     public ShortUrlResponseDTO generateShortUrl(String originalUrl) {
         LOGGER.info("[generateShortUrl] perform API. CLIENT_ID : {}, CLIENT_SECRET : {}", CLIENT_ID, CLIENT_SECRET);
         return shortUrlService.generateShortUrl(CLIENT_ID, CLIENT_SECRET, originalUrl);
     }
 
-    @GetMapping
+    @GetMapping("/")
     public ShortUrlResponseDTO getShortUrl(String originalUrl) {
-        ShortUrlResponseDTO shortUrlResponseDTO = new ShortUrlResponseDTO("ss","ss");
         return shortUrlService.getShortUrl(CLIENT_ID, CLIENT_SECRET, originalUrl);
     }
 

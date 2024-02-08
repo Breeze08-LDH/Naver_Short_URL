@@ -4,9 +4,11 @@ import com.breeze.springapi.data.dao.ShortUrlDAO;
 import com.breeze.springapi.data.entity.ShortUrlEntity;
 import com.breeze.springapi.data.repository.ShortUrlRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ShortUrlDAOImpl implements ShortUrlDAO {
-    private ShortUrlRepository shortUrlRepository;
+    private final ShortUrlRepository shortUrlRepository;
 
     @Autowired
     public ShortUrlDAOImpl(ShortUrlRepository shortUrlRepository) {
