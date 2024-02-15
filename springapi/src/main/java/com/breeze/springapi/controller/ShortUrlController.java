@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/short-url")
+@RequestMapping("/short-url")
 public class ShortUrlController {
     private final Logger LOGGER = LoggerFactory.getLogger(ShortUrlController.class);
 
-    @Value("$(breeze.spring.short.url.id)")
+    @Value("${breeze.spring.short.url.id}")
     private String CLIENT_ID;
 
-    @Value("$(breeze.spring.short.url.secret)")
+    @Value("${breeze.spring.short.url.secret}")
     private String CLIENT_SECRET;
 
     ShortUrlService shortUrlService;
@@ -31,7 +31,7 @@ public class ShortUrlController {
 
     @PostMapping("/")
     public ShortUrlResponseDTO generateShortUrl(String originalUrl) {
-        LOGGER.info("[generateShortUrl] perform API. CLIENT_ID : {}, CLIENT_SECRET : {}", CLIENT_ID, CLIENT_SECRET);
+        LOGGER.info("[C][generateShortUrl] perform API. CLIENT_ID:[{}], CLIENT_SECRET:[{}]. originalUrl:[{}]", CLIENT_ID, CLIENT_SECRET, originalUrl);
         return shortUrlService.generateShortUrl(CLIENT_ID, CLIENT_SECRET, originalUrl);
     }
 
