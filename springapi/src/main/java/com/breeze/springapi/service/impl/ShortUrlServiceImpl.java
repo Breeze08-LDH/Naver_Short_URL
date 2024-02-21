@@ -119,8 +119,6 @@ public class ShortUrlServiceImpl implements ShortUrlService {
                 .build()
                 .toUri();
 
-        LOGGER.info(">>> [uri] : [{}]", uri);
-
         HttpHeaders headers = new HttpHeaders();
         headers.setAccept(Arrays.asList(new MediaType[]{MediaType.APPLICATION_JSON}));
         headers.setContentType(MediaType.APPLICATION_JSON);
